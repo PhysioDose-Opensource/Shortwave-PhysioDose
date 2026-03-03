@@ -1,0 +1,13 @@
+MIT License
+
+Copyright (c) 2026 Dr. Juan Serrano Ferrer, Dr. Jorge Cazorla González, Nil Jordà Boixet, Nuria Puigtió Rebollo
+
+Se concede permiso por la presente, libre de cargos, a cualquier persona que obtenga una copia de este software y de los archivos de documentación asociados (el "Software"), a utilizar el Software sin restricción, incluyendo sin limitación los derechos a usar, copiar, modificar, fusionar, publicar, distribuir, sublicenciar, y/o vender copias del Software, y a permitir a las personas a las que se les proporcione el Software a hacer lo mismo, sujeto a las siguientes condiciones:
+
+El aviso de copyright anterior y este aviso de permiso se incluirán en todas las copias o partes sustanciales del Software.
+
+Adicionalmente, el uso de este Software en entornos académicos, de investigación o clínicos requiere la citación explícita de los autores originales tal y como se detalla en el archivo README adjunto.
+
+Serrano-Ferrer, J., Cazorla González, J., Jordà Boixet, N., & Puigtió Rebollo, N. (2026). Shortwave diathermy dose calculator for clinical, academic, and scientific use in musculoskeletal conditions. Zenodo. https://doi.org/10.5281/zenodo.18744902
+
+EL SOFTWARE SE PROPORCIONA "TAL CUAL", SIN GARANTÍA DE NINGÚN TIPO, EXPRESA O IMPLÍCITA, INCLUYENDO PERO NO LIMITADO A GARANTÍAS DE COMERCIALIZACIÓN, IDONEIDAD PARA UN PROPÓSITO PARTICULAR Y NO INFRACCIÓN. EN NINGÚN CASO LOS AUTORES O TITULARES DEL COPYRIGHT SERÁN RESPONSABLES DE NINGUNA RECLAMACIÓN, DAÑOS U OTRAS RESPONSABILIDADES, YA SEA EN UNA ACCIÓN DE CONTRATO, AGRAVIO O CUALQUIER OTRO MOTIVO, QUE SURJA DE O EN CONEXIÓN CON EL SOFTWARE O EL USO U OTROS TRATOS EN EL SOFTWARE.
