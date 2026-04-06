@@ -21,5 +21,3 @@ Automated Reporting: Automated generation of standardized scientific interventio
 Privacy & Architecture: Zero-dependency, offline-ready HTML architecture ensuring long-term accessibility and 100% patient data privacy.
 Keywords: Shortwave Diathermy, Dosimetry, Physical Therapy, Rehabilitation, Electrotherapy, Medical Software, Evidence-Based Practice, Clinical Reasoning, Musculoskeletal.
 
---------------------------------------------------------------------------------
-Baja hasta el final de la página y haz clic en el botón verde "Commit changes" (Guardar cambios).
