@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Dosis en Onda Corta</title>
+    <title>Shortwave Diathermy Dosimetry Calculator</title>
     <style>
         :root {
             --primary: #2563eb;
@@ -353,15 +353,15 @@
                     <svg class="icon" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
                 </div>
                 <div class="nav-title">
-                    <h1 data-i18n="appTitle">Calculadora de Dosis en Onda Corta</h1>
+                    <h1 data-i18n="appTitle">Shortwave Diathermy Dosimetry Calculator</h1>
                     <p>Dr. Juan Serrano Ferrer, Dr. Jorge Cazorla González, Nil Jordà Boixet, Nuria Puigtió Rebollo | <a href="mailto:jserrano@euses.cat">jserrano@euses.cat</a></p>
                 </div>
             </div>
             <div style="display: flex; align-items: center; gap: 15px;">
                 <div style="font-family: monospace; font-size: 10px; color: var(--text-muted); display: none; @media(min-width: 768px){display:block;}">
-                    v3.3 | Offline Ready
+                    v3.4 | Offline Ready
                 </div>
-                <button onclick="toggleLang()" id="langBtn" class="lang-btn">EN</button>
+                <button onclick="toggleLang()" id="langBtn" class="lang-btn">ES</button>
             </div>
         </div>
     </nav>
@@ -370,16 +370,16 @@
         
         <!-- Header -->
         <div class="header-controls">
-            <h2 style="font-size: 1.25rem; font-weight: 700; color: var(--text-main);" data-i18n="configTitle">Configuración del Tratamiento</h2>
+            <h2 style="font-size: 1.25rem; font-weight: 700; color: var(--text-main);" data-i18n="configTitle">Treatment Configuration</h2>
             
             <div class="mode-selector">
                 <button onclick="setMode('pulsed')" id="btn-pulsed" class="btn-mode active">
                     <svg class="icon" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                    <span data-i18n="modePulsed">Pulsado (PSWD)</span>
+                    <span data-i18n="modePulsed">Pulsed (PSWD)</span>
                 </button>
                 <button onclick="setMode('continuous')" id="btn-continuous" class="btn-mode">
                     <svg class="icon" viewBox="0 0 24 24"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg>
-                    <span data-i18n="modeContinuous">Continuo (CSWD)</span>
+                    <span data-i18n="modeContinuous">Continuous (CSWD)</span>
                 </button>
             </div>
         </div>
@@ -394,7 +394,7 @@
                         <div class="control-header">
                             <label class="label-flex">
                                 <svg class="icon" style="color:var(--primary)" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-                                <span data-i18n="peakLabel">Potencia Pico</span>
+                                <span data-i18n="peakLabel">Peak Power</span>
                             </label>
                             <span class="value-display" style="color:var(--primary)"><span id="val-peak">200</span> <span class="unit">W</span></span>
                         </div>
@@ -413,14 +413,14 @@
                             <div class="control-header">
                                 <label class="label-flex">
                                     <svg class="icon" style="color:#c084fc" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 12h10"/><path d="M10 16v-8"/><path d="M14 16v-8"/></svg>
-                                    <span data-i18n="widthLabel">Ancho de Pulso</span>
+                                    <span data-i18n="widthLabel">Pulse Width</span>
                                 </label>
                                 <span class="value-display" style="color:#c084fc"><span id="val-width">400</span> <span class="unit">µs</span></span>
                             </div>
                             <input type="range" id="width" min="20" max="800" step="10" value="400">
                             <div class="range-labels">
                                 <span>20 µs</span>
-                                <span class="hint-badge" data-i18n="hintWidth">Estándar: 200-400 µs</span>
+                                <span class="hint-badge" data-i18n="hintWidth">Standard: 200-400 µs</span>
                                 <span>800 µs</span>
                             </div>
                         </div>
@@ -430,14 +430,14 @@
                             <div class="control-header">
                                 <label class="label-flex">
                                     <svg class="icon" style="color:#c084fc" viewBox="0 0 24 24"><line x1="10" x2="14" y1="2" y2="2"/><line x1="12" x2="15" y1="14" y2="11"/><circle cx="12" cy="14" r="8"/></svg>
-                                    <span data-i18n="freqLabel">Frecuencia</span>
+                                    <span data-i18n="freqLabel">Frequency</span>
                                 </label>
                                 <span class="value-display" style="color:#c084fc"><span id="val-freq">400</span> <span class="unit">Hz</span></span>
                             </div>
                             <input type="range" id="freq" min="10" max="800" step="10" value="400">
                             <div class="range-labels">
                                 <span>10 Hz</span>
-                                <span class="hint-badge" data-i18n="hintFreq">Térmico: >300 Hz</span>
+                                <span class="hint-badge" data-i18n="hintFreq">Thermal: >300 Hz</span>
                                 <span>800 Hz</span>
                             </div>
                         </div>
@@ -446,8 +446,8 @@
                     <!-- Info Continuo -->
                     <div id="continuous-info" class="hidden" style="padding: 2rem; background: #eff6ff; border: 1px dashed var(--primary); border-radius: 0.5rem; text-align: center; margin: 1.5rem 0;">
                         <svg class="icon" style="width:32px; height:32px; color:var(--primary); margin-bottom:0.5rem;" viewBox="0 0 24 24"><path d="M12 12c-2-2.67-4-4-6-4a4 4 0 1 0 0 8c2 0 4-1.33 6-4Zm0 0c2 2.67 4 4 6 4a4 4 0 1 0 0-8c-2 0-4 1.33-6 4Z"/></svg>
-                        <p style="color: var(--primary-dark); font-weight: 700;" data-i18n="contActive">Modo Continuo Activado</p>
-                        <p style="color: var(--primary); font-size: 0.875rem;" data-i18n="contDesc">La emisión es constante sin pausas (Ciclo 100%).</p>
+                        <p style="color: var(--primary-dark); font-weight: 700;" data-i18n="contActive">Continuous Mode Activated</p>
+                        <p style="color: var(--primary); font-size: 0.875rem;" data-i18n="contDesc">Emission is constant without pauses (100% Duty Cycle).</p>
                     </div>
 
                     <!-- Tiempo -->
@@ -456,14 +456,14 @@
                             <div class="control-header">
                                 <label class="label-flex">
                                     <svg class="icon" style="color:var(--success)" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                                    <span data-i18n="timeLabel">Tiempo</span>
+                                    <span data-i18n="timeLabel">Time</span>
                                 </label>
                                 <span class="value-display" style="color:var(--success)"><span id="val-time">20</span> <span class="unit">min</span></span>
                             </div>
                             <input type="range" id="time" min="5" max="30" step="1" value="20">
                             <div class="range-labels">
                                 <span>5 min</span>
-                                <span class="hint-badge" data-i18n="hintTime">Habitual: 15-20 min</span>
+                                <span class="hint-badge" data-i18n="hintTime">Typical: 15-20 min</span>
                                 <span>30 min</span>
                             </div>
                         </div>
@@ -474,8 +474,8 @@
                 <div class="info-panel">
                     <svg class="icon" viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
                     <div class="info-text">
-                        <h4 data-i18n="safetyTitle">Criterio de Seguridad Clínica</h4>
-                        <p data-i18n="safetyDesc">El cálculo es una referencia. El paciente <strong>NUNCA</strong> debe sentir dolor. Busque una sensación de calor <em>"agradable y moderada"</em>. Si el calor es fuerte, hay riesgo de quemadura profunda en menos de 5 minutos.</p>
+                        <h4 data-i18n="safetyTitle">Clinical Safety Criterion</h4>
+                        <p data-i18n="safetyDesc">This calculation is a reference. The patient must <strong>NEVER</strong> feel pain. Aim for a <em>'pleasant and moderate'</em> warmth. If heat is strong, deep burns can occur in under 5 minutes.</p>
                     </div>
                 </div>
             </div>
@@ -485,12 +485,12 @@
                 <!-- Tarjeta Resultados -->
                 <div class="results-card">
                     <div class="results-bg"></div>
-                    <div class="res-header" data-i18n="resTitle">Dosimetría Calculada</div>
+                    <div class="res-header" data-i18n="resTitle">Computed Dosimetry</div>
                     
                     <div class="res-main">
                         <div class="res-label">
-                            <span data-i18n="resMeanLabel">Potencia Media (P<sub>mean</sub>)</span>
-                            <span class="tag" data-i18n="resTag">Carga Térmica</span>
+                            <span data-i18n="resMeanLabel">Mean Power (P<sub>mean</sub>)</span>
+                            <span class="tag" data-i18n="resTag">Thermal Load</span>
                         </div>
                         <div class="res-value-lg">
                             <span id="res-mean">64</span><span style="font-size:1.5rem; color:#94a3b8; font-weight:400; margin-left:0.5rem">W</span>
@@ -499,11 +499,11 @@
 
                     <div class="res-grid">
                         <div>
-                            <div class="res-label" data-i18n="resDcLabel">Ciclo de Trabajo</div>
+                            <div class="res-label" data-i18n="resDcLabel">Duty Cycle</div>
                             <div class="res-val-sm text-purple"><span id="res-dc">32</span>%</div>
                         </div>
                         <div>
-                            <div class="res-label" data-i18n="resKjLabel">Energía Total</div>
+                            <div class="res-label" data-i18n="resKjLabel">Total Energy</div>
                             <div class="res-val-sm text-green"><span id="res-kj">76.8</span> kJ</div>
                         </div>
                     </div>
@@ -512,31 +512,31 @@
                 <!-- Botón Generar -->
                 <button onclick="openReport()" class="btn-gen">
                     <svg class="icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                    <span data-i18n="btnGenerate">Generar Informe de Intervención</span>
+                    <span data-i18n="btnGenerate">Generate Intervention Report</span>
                 </button>
 
                 <!-- Interpretación -->
                 <div id="card-interpretation" class="interp-card">
                     <div class="interp-header">
-                        <h4 style="font-weight: 700; color: var(--text-main); font-size: 0.875rem; text-transform:uppercase;" data-i18n="interpTitle">Nivel Clínico Estimado</h4>
+                        <h4 style="font-weight: 700; color: var(--text-main); font-size: 0.875rem; text-transform:uppercase;" data-i18n="interpTitle">Estimated Clinical Level</h4>
                         <span id="badge-level" class="interp-badge">...</span>
                     </div>
                     <p id="text-desc" class="interp-text">...</p>
                     <div style="text-align: right; font-size: 10px; color: var(--text-muted); margin-top: 1rem;" data-i18n="interpRef">
-                        Basado en: Laufer et al. (2012), Masiero et al. (2019)
+                        Based on: Laufer et al. (2012), Masiero et al. (2019)
                     </div>
                 </div>
 
                 <!-- Tabla -->
                 <div class="ref-table">
                     <div class="ref-header">
-                        <span data-i18n="tableTitle">Referencias (20 min)</span>
+                        <span data-i18n="tableTitle">References (20 min)</span>
                         <svg class="icon" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
                     </div>
-                    <div class="row"><span style="color:var(--text-muted); font-weight:600" data-i18n="tbRow1">Atérmico</span> <span>&lt; 5 W</span></div>
-                    <div class="row"><span style="color:#ca8a04; font-weight:600" data-i18n="tbRow2">Leve</span> <span>10 - 20 W</span></div>
-                    <div class="row"><span style="color:#ea580c; font-weight:600" data-i18n="tbRow3">Moderado</span> <span>20 - 40 W</span></div>
-                    <div class="row"><span style="color:#dc2626; font-weight:600" data-i18n="tbRow4">Vigoroso</span> <span>&gt; 45 W</span></div>
+                    <div class="row"><span style="color:var(--text-muted); font-weight:600" data-i18n="tbRow1">Athermal</span> <span>&lt; 5 W</span></div>
+                    <div class="row"><span style="color:#ca8a04; font-weight:600" data-i18n="tbRow2">Mild</span> <span>10 - 20 W</span></div>
+                    <div class="row"><span style="color:#ea580c; font-weight:600" data-i18n="tbRow3">Moderate</span> <span>20 - 40 W</span></div>
+                    <div class="row"><span style="color:#dc2626; font-weight:600" data-i18n="tbRow4">Vigorous</span> <span>&gt; 45 W</span></div>
                 </div>
             </div>
         </div>
@@ -547,25 +547,25 @@
         <div class="modal-head">
             <h3 style="font-weight: 700; display: flex; align-items: center; gap: 0.5rem; font-size: 1rem;">
                 <svg class="icon" viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg>
-                <span data-i18n="modTitle">Informe de Tratamiento</span>
+                <span data-i18n="modTitle">Treatment Report</span>
             </h3>
             <button onclick="closeReport()" style="background:none; border:none; color:white; cursor:pointer">
                 <svg class="icon" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
             </button>
         </div>
         <div class="modal-body">
-            <p style="font-size:0.875rem; color: var(--text-muted); margin-bottom: 0.5rem;" data-i18n="modDesc">Puede copiar el texto o generar un PDF formal:</p>
+            <p style="font-size:0.875rem; color: var(--text-muted); margin-bottom: 0.5rem;" data-i18n="modDesc">You can copy the text below or generate a formal PDF:</p>
             <textarea id="reportText" readonly></textarea>
             <div class="modal-foot">
-                <button onclick="closeReport()" class="btn-close" data-i18n="modClose">Cerrar</button>
+                <button onclick="closeReport()" class="btn-close" data-i18n="modClose">Close</button>
                 <button onclick="copyToClipboard()" class="btn-copy">
                     <svg class="icon" id="icon-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
-                    <span id="btn-copy-text" data-i18n="modCopy">Copiar</span>
+                    <span id="btn-copy-text" data-i18n="modCopy">Copy</span>
                 </button>
                 <!-- BOTÓN DE IMPRESIÓN/PDF -->
                 <button onclick="printToPDF()" class="btn-print">
                     <svg class="icon" viewBox="0 0 24 24"><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6"/><rect width="12" height="8" x="6" y="14" rx="1"/></svg>
-                    <span data-i18n="modPdf">Guardar PDF</span>
+                    <span data-i18n="modPdf">Save PDF</span>
                 </button>
             </div>
         </div>
@@ -573,7 +573,7 @@
 
     <script>
         let isPulsed = true;
-        let currentLang = 'es';
+        let currentLang = 'en';
         
         // --- SISTEMA DE TRADUCCIÓN (i18n) ---
         const i18n = {
@@ -649,7 +649,7 @@
                 prSubTitle3: "Estimación Clínica y Seguridad",
                 prEstLevel: "Nivel Estimado",
                 prScience: "Razonamiento Científico",
-                prFooter: "Documento generado por PhysioDose (Calculadora de Dosis en Onda Corta v3.3)"
+                prFooter: "Documento generado por PhysioDose (Calculadora de Dosis en Onda Corta v3.4)"
             },
             en: {
                 appTitle: "Shortwave Diathermy Dosimetry Calculator",
@@ -723,7 +723,7 @@
                 prSubTitle3: "Clinical Estimation & Safety",
                 prEstLevel: "Estimated Level",
                 prScience: "Scientific Reasoning",
-                prFooter: "Document generated by PhysioDose (Shortwave Dosimetry Calculator v3.3)"
+                prFooter: "Document generated by PhysioDose (Shortwave Dosimetry Calculator v3.4)"
             }
         };
 
@@ -758,8 +758,8 @@
 
         // Función cambio de idioma
         function toggleLang() {
-            currentLang = currentLang === 'es' ? 'en' : 'es';
-            els.langBtn.textContent = currentLang === 'es' ? 'EN' : 'ES';
+            currentLang = currentLang === 'en' ? 'es' : 'en';
+            els.langBtn.textContent = currentLang === 'en' ? 'ES' : 'EN';
             updateStaticText();
             setMode(isPulsed ? 'pulsed' : 'continuous'); // Re-evaluar hints
             calculate(); // Re-evaluar descripciones
@@ -927,7 +927,7 @@
             
             const btnText = document.getElementById('btn-copy-text');
             const originalText = btnText.innerHTML;
-            btnText.innerHTML = currentLang === 'es' ? '¡Copiado!' : 'Copied!';
+            btnText.innerHTML = currentLang === 'en' ? 'Copied!' : '¡Copiado!';
             
             const btn = document.querySelector('.btn-copy');
             btn.style.background = 'var(--success)';
